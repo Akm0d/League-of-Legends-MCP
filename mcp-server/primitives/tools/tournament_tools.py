@@ -1,13 +1,13 @@
 """Tournament API tools for League of Legends."""
 
 import logging
-from mcp.server.fastmcp import FastMCP
+from mcp.server.mcpserver import MCPServer
 from services.riot_api_service import make_riot_request, RIOT_API_BASE, LOL_REGIONS
 
 logger = logging.getLogger(__name__)
 
 
-def register_tournament_tools(mcp: FastMCP):
+def register_tournament_tools(mcp: MCPServer):
     """Register all tournament-related tools."""
     
     @mcp.tool()

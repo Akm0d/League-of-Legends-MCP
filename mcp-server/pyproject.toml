@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "league-mcp"
-version = "0.1.2"
+version = "0.2.0"
 description = "Model Context Protocol server for League of Legends game data via Riot Games API"
 readme = "README.md"
 license = { file = "LICENSE" }
@@ -25,20 +25,20 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.14",
     "Topic :: Games/Entertainment",
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]
 requires-python = ">=3.12"
 dependencies = [
     "httpx>=0.28.1",
-    "mcp[cli]>=1.9.4",
+    "mcp[cli]>=2.2.0,<3",
     "python-dotenv>=1.1.0",
-    "requests>=2.31.0",
 ]
 
 [project.optional-dependencies]
 dev = [
-    "pytest>=7.0.0",
+    "pytest>=8.0.0",
     "pytest-asyncio>=0.21.0",
     "black>=23.0.0",
     "isort>=5.12.0",
@@ -53,6 +53,10 @@ Issues = "https://github.com/kostadindevLeague-of-Legends-MCP/issues"
 
 [project.scripts]
 league-mcp = "main:main"
+
+[tool.pytest.ini_options]
+addopts = "--import-mode=importlib"
+testpaths = ["tests"]
 
 [tool.hatch.build]
 include = [

@@ -22,7 +22,7 @@ Examples:
 
 import argparse
 import logging
-from mcp.server.fastmcp import FastMCP
+from mcp.server.mcpserver import MCPServer
 
 # Import all tool registration functions
 from primitives.tools.account_tools import register_account_tools
@@ -43,8 +43,8 @@ from primitives.prompts.common_workflows import register_workflow_prompts
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-# Initialize FastMCP server
-mcp = FastMCP("league")
+# Initialize MCP server
+mcp = MCPServer("league")
 
 def main():
     """

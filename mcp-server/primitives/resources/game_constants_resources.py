@@ -1,7 +1,7 @@
 """Game constants resources for League of Legends."""
 
 import logging
-from mcp.server.fastmcp import FastMCP
+from mcp.server.mcpserver import MCPServer
 
 logger = logging.getLogger(__name__)
 
@@ -178,7 +178,7 @@ SEASONS = [
 ]
 
 
-def register_game_constants_resources(mcp: FastMCP):
+def register_game_constants_resources(mcp: MCPServer):
     """Register all game constants resources."""
     
     @mcp.resource("constants://queues", description="Get all queue types and IDs")

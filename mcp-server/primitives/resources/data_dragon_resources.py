@@ -1,7 +1,7 @@
 """Data Dragon resources for League of Legends static data."""
 
 import logging
-from mcp.server.fastmcp import FastMCP
+from mcp.server.mcpserver import MCPServer
 import httpx
 
 logger = logging.getLogger(__name__)
@@ -11,7 +11,7 @@ DATA_DRAGON_BASE = "https://ddragon.leagueoflegends.com"
 LATEST_VERSION = "15.12.1"  # This should be updated or fetched dynamically
 
 
-def register_data_dragon_resources(mcp: FastMCP):
+def register_data_dragon_resources(mcp: MCPServer):
     """Register all Data Dragon resources."""
     
     @mcp.resource("ddragon://versions", description="Get all available Data Dragon versions")

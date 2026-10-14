@@ -1,14 +1,14 @@
 """Match API tools for League of Legends."""
 
 import logging
-from mcp.server.fastmcp import FastMCP
+from mcp.server.mcpserver import MCPServer
 from services.riot_api_service import make_riot_request, RIOT_API_BASE, get_routing_region, LOL_REGIONS
 from utils.formatters import format_match_ids, format_match_detail, format_match_timeline
 
 logger = logging.getLogger(__name__)
 
 
-def register_match_tools(mcp: FastMCP):
+def register_match_tools(mcp: MCPServer):
     """Register all match-related tools."""
     
     @mcp.tool()

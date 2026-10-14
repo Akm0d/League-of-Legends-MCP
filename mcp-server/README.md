@@ -98,7 +98,21 @@ pip install league-mcp
 ```
 
 ### Using uv ⚡
-When using uv no specific installation is needed. We will use uvx to directly run league-mcp.
+Install the server with uv, then run the command:
+
+```bash
+uv tool install league-mcp
+league-mcp --help
+```
+
+To install a checkout while developing, run this from the repository root:
+
+```bash
+uv tool install --reinstall ./mcp-server
+```
+
+The package requires MCP Python SDK 2.x and Python 3.12 or newer, including
+Python 3.14.
 
 ### Using pip from source 🔧
 ```bash

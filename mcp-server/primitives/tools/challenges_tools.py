@@ -1,14 +1,14 @@
 """Challenges API tools for League of Legends."""
 
 import logging
-from mcp.server.fastmcp import FastMCP
+from mcp.server.mcpserver import MCPServer
 from services.riot_api_service import make_riot_request, RIOT_API_BASE, LOL_REGIONS
 from utils.formatters import format_challenge_configs, format_challenge_config, format_challenge_leaderboard, format_player_challenges
 
 logger = logging.getLogger(__name__)
 
 
-def register_challenges_tools(mcp: FastMCP):
+def register_challenges_tools(mcp: MCPServer):
     """Register all challenges-related tools."""
     
     @mcp.tool()
